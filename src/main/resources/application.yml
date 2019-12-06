@@ -1,0 +1,28 @@
+
+spring:
+  data:
+    mongodb: 
+        host: localhost
+        port: 27017
+        uri: mongodb://localhost/beer
+        repositories: 
+            enabled: true
+    rest:
+      base-path: /api/v1
+  jackson:
+    time-zone: GMT-4
+  jpa:
+    open-in-view : false
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      ddl-auto: create-drop
+logging:
+    level:
+        root: warn
+        com.beer: INFO
+        org.springframework.boot: warn
+        org.hibernate.SQL: debug
+server:
+    port: 8080
+    servlet:
+      context-path: /api/v1
