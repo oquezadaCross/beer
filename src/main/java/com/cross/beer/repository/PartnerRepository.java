@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.repository.Query;
  */
 public interface PartnerRepository extends MongoRepository<Partner, String> {
 
-    @Query("{coverageArea:{ '$geoIntersects' : { '$geometry' : ?0}},$geoNear:?0}")
+    @Query("{coverageArea:{ '$geoIntersects' : { '$geometry' : ?0},'address':$geoNear:?0}}")
     List<Partner> searchInPolygons(Point point);
 
 }
