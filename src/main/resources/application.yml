@@ -1,10 +1,13 @@
 
 spring:
   data:
-    mongodb: 
-        host: localhost
+    mongodb:
+        username: cross
+        authentication-database: admin
+        password: cross
+        host: 127.0.0.1
+        database: test
         port: 27017
-        uri: mongodb://localhost/beer
         repositories: 
             enabled: true
     rest:
@@ -19,9 +22,10 @@ spring:
 logging:
     level:
         root: warn
-        com.beer: INFO
+        com.cross: INFO
         org.springframework.boot: warn
         org.hibernate.SQL: debug
+        org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 server:
     port: 8080
     servlet:

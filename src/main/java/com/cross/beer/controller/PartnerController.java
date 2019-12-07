@@ -25,6 +25,7 @@ public class PartnerController {
 
     @PostMapping()
     public ResponseEntity<Partner> create(@RequestBody Partner partner) {
+        partner = partnerService.create(partner);
         return new ResponseEntity<>(partner, HttpStatus.OK);
     }
 
