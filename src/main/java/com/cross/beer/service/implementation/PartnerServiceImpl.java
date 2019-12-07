@@ -3,6 +3,8 @@ package com.cross.beer.service.implementation;
 import com.cross.beer.model.Partner;
 import com.cross.beer.repository.PartnerRepository;
 import com.cross.beer.service.PartnerService;
+import com.mongodb.client.model.geojson.Point;
+import com.mongodb.client.model.geojson.Position;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +30,10 @@ public class PartnerServiceImpl implements PartnerService {
     }
 
     @Override
-    public List<Partner> search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Partner> search(double lon, double lat) {
+        Position position = new Position(lon, lat);
+        Point ref = new Point(position);
+        return partnerRepository.searchInPolygons(ref);
     }
 
 }

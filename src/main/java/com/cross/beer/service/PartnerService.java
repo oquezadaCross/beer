@@ -13,6 +13,6 @@ public interface PartnerService {
 
     public Partner findById(Partner partner);
 
-    public List<Partner> search();
+    public List<Partner> search(double lon, double lat);
 
 }
