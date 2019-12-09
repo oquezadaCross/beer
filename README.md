@@ -35,7 +35,7 @@ There you have to set the credentials and the port to make the connection from t
 
 #### Database configuration
 
-Create the database "test" and insert the next document:
+Create the database "test" and insert the next document in the "partners" collection:
 
 ```json
 {
